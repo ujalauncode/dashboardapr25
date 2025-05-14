@@ -19,12 +19,12 @@ function Home() {
 
   const signuphere = async (e) => {
     e.preventDefault();
-    console.log("Form data being submitted:", data); // ✅ Confirm this logs
+    // console.log("Form data being submitted:", data); // ✅ Confirm this logs
 
     try {
         console.log("hey started")
-      const res = await axios.post("http://localhost:5002/api/auth/signup", data);
-      console.log("hey done")
+      const res = await axios.post("http://localhost:3005/api/auth/signup", data);
+      console.log("hey done", data)
       if (res.status === 201) {
         console.log("Signup done");
         navigation('/login');

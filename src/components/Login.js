@@ -15,7 +15,10 @@ const navigate = useNavigate()
     e.preventDefault();
     try {
         console.log("starting login")
-        let res = await axios.post("http://localhost:5002/api/auth/login", data)
+        let res = await axios.post("http://localhost:5008/api/auth/login", data,{
+            withCredentials: true
+        
+        })
         console.log("endup")
     //    let x = localStorage.setItem(res.data.name)
     //    console.log("local", x)

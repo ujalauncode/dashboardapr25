@@ -24,7 +24,7 @@ const postformdata = async (e) => {
   e.preventDefault();
   try {
     console.log("heyyy start submit")
-    let response = await axios.post("http://localhost:5004/api/user/datapost", userdata);
+    let response = await axios.post("http://localhost:5007/api/user/datapost", userdata);
     console.log("end submit")
     if (response.status === 201) {
       console.log("Data sent successfully");
@@ -56,7 +56,15 @@ const getdata =async()=>{
 
 }
 
+
+const newdata =async()=>{
+  console.log("getting data")
+  const x  = await axios.get('http://localhost:3007/api/auth/getusers')
+  console.log("get data", x.data)
+}
+
 useEffect(()=>{
+  
   getdata()
 },[])
 
@@ -74,6 +82,7 @@ const chnclr =()=>{
 
 
 const showusersfarm =()=>{
+  newdata()
   setshowfarm(true)
 }
 
@@ -175,3 +184,8 @@ const showusersfarm =()=>{
 }
 
 export default Mainhome
+
+
+
+
+
